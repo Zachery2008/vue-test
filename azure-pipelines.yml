@@ -17,17 +17,15 @@ steps:
 
 - script: |
     npm install
-  workingDirectory: vue-test
   displayName: 'npm install'
 
 - script: |
     npm run build
-  workingDirectory: vue-test
   displayName: 'npm build'
 
 - task: ArchiveFiles@2
   inputs:
-    rootFolderOrFile: 'vue-test/dist'
+    rootFolderOrFile: 'dist'
     includeRootFolder: false
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
