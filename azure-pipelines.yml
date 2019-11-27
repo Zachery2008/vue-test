@@ -21,6 +21,11 @@ steps:
   workingDirectory: vue-test
   displayName: 'npm install and build'
 
+- script: |
+    npm run build
+  workingDirectory: vue-test
+  displayName: 'npm build'
+
 - task: ArchiveFiles@2
   inputs:
     rootFolderOrFile: 'vue-test/dist'
